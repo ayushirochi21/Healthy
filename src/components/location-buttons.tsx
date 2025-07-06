@@ -66,11 +66,11 @@ export default function LocationButtons() {
     return (
         <Card>
             <CardContent className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <Button onClick={() => openMaps('hospitals')} size="lg" variant="outline">
+                 <Button onClick={() => openMaps('hospitals')} size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground button-glossy-glow">
                     <Hospital className="mr-2 h-5 w-5" />
                     Find Nearby Hospitals
                 </Button>
-                <Button onClick={() => openMaps('doctors')} size="lg" variant="outline">
+                <Button onClick={() => openMaps('doctors')} size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground button-glossy-glow">
                     <Stethoscope className="mr-2 h-5 w-5" />
                     Find Nearby Doctors
                 </Button>

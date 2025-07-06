@@ -70,7 +70,7 @@ export default function SymptomAnalyzer() {
                     <FormControl>
                       <Textarea
                         placeholder="e.g., I have a persistent headache, a runny nose, and I've been sneezing a lot..."
-                        className="resize-none min-h-[120px] text-base"
+                        className="resize-none min-h-[80px] text-base"
                         {...field}
                       />
                     </FormControl>
@@ -78,7 +78,7 @@ export default function SymptomAnalyzer() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isLoading} className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button type="submit" disabled={isLoading} className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-accent-foreground button-glossy-glow">
                 {isLoading ? 'Analyzing...' : <><Sparkles className="mr-2 h-5 w-5" /> Analyze Symptoms</>}
               </Button>
             </form>
