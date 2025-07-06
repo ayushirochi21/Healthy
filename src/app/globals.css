@@ -64,5 +64,32 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  }
+  .dark body {
+    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  .btn-glossy {
+    @apply text-primary-foreground border-primary/50 border;
+    background-image: linear-gradient(to bottom, hsl(var(--primary) / 0.9), hsl(var(--primary) / 1.1));
+    box-shadow: inset 0 1px 1px hsl(var(--primary-foreground) / 0.2), 0 2px 4px hsl(var(--primary) / 0.2), 0 0 10px hsl(var(--primary) / 0.4);
+    transition: all 0.2s ease-in-out;
+  }
+  .btn-glossy:hover {
+    background-image: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--primary) / 1.2));
+    box-shadow: inset 0 1px 1px hsl(var(--primary-foreground) / 0.2), 0 4px 8px hsl(var(--primary) / 0.3), 0 0 15px hsl(var(--primary) / 0.5);
+    transform: translateY(-1px);
+  }
+  .glassmorphism {
+    @apply bg-card/60 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  .dark .glassmorphism {
+     @apply bg-card/50 backdrop-blur-lg border border-white/10;
   }
 }

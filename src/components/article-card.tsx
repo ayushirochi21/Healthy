@@ -32,16 +32,16 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
   if (isLoading) {
     return (
-      <Card className="flex flex-col h-full">
+      <Card className="flex flex-col h-full glassmorphism">
         <CardHeader>
-           <Skeleton className="h-6 w-3/4" />
+           <Skeleton className="h-6 w-3/4 bg-white/20" />
         </CardHeader>
         <CardContent className="flex-grow space-y-4">
-          <Skeleton className="h-32 w-full rounded-md" />
+          <Skeleton className="h-32 w-full rounded-md bg-white/20" />
           <div className="space-y-2">
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-5/6" />
+            <Skeleton className="h-4 w-full bg-white/20" />
+            <Skeleton className="h-4 w-full bg-white/20" />
+            <Skeleton className="h-4 w-5/6 bg-white/20" />
           </div>
         </CardContent>
       </Card>
@@ -49,13 +49,13 @@ export default function ArticleCard({ article }: ArticleCardProps) {
   }
 
   return (
-    <Card className="flex flex-col h-full overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl duration-300">
+    <Card className="flex flex-col h-full overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl duration-300 glassmorphism">
       <CardHeader>
         <CardTitle className="text-xl line-clamp-2">{article.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col">
         {preview?.imageUrl ? (
-          <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden bg-muted">
+          <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden bg-muted/50">
             <Image
               src={preview.imageUrl}
               alt={`AI generated image for ${article.title}`}
@@ -65,7 +65,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             />
           </div>
         ) : (
-          <div className="w-full h-40 mb-4 rounded-md bg-muted flex items-center justify-center">
+          <div className="w-full h-40 mb-4 rounded-md bg-muted/50 flex items-center justify-center">
             <p className="text-muted-foreground text-sm">No image available</p>
           </div>
         )}

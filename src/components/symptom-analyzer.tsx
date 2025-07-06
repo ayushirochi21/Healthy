@@ -58,7 +58,7 @@ export default function SymptomAnalyzer() {
 
   return (
     <div className="space-y-12">
-      <Card className="shadow-2xl border-2 border-primary/10 overflow-hidden">
+      <Card className="glassmorphism overflow-hidden">
         <CardContent className="p-8">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -70,7 +70,7 @@ export default function SymptomAnalyzer() {
                     <FormControl>
                       <Textarea
                         placeholder="e.g., I have a persistent headache, a runny nose, and I've been sneezing a lot..."
-                        className="resize-none min-h-[120px] text-base"
+                        className="resize-none min-h-[100px] text-base bg-white/80 dark:bg-black/80"
                         {...field}
                       />
                     </FormControl>
@@ -78,7 +78,7 @@ export default function SymptomAnalyzer() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isLoading} size="lg" className="w-full">
+              <Button type="submit" disabled={isLoading} size="lg" className="w-full btn-glossy">
                 {isLoading ? 'Analyzing...' : <><Sparkles className="mr-2 h-5 w-5" /> Analyze Symptoms</>}
               </Button>
             </form>
@@ -89,25 +89,25 @@ export default function SymptomAnalyzer() {
       {isLoading && (
         <div className="space-y-12">
             <div className="space-y-4">
-                <Skeleton className="h-8 w-1/3 mx-auto" />
+                <Skeleton className="h-8 w-1/3 mx-auto bg-white/20" />
                  <div className="grid gap-6 md:grid-cols-3">
-                    <Skeleton className="h-40 rounded-lg" />
-                    <Skeleton className="h-40 rounded-lg" />
-                    <Skeleton className="h-40 rounded-lg" />
+                    <Skeleton className="h-40 rounded-lg bg-white/20" />
+                    <Skeleton className="h-40 rounded-lg bg-white/20" />
+                    <Skeleton className="h-40 rounded-lg bg-white/20" />
                 </div>
-                <Skeleton className="h-48 rounded-lg" />
+                <Skeleton className="h-48 rounded-lg bg-white/20" />
             </div>
              <div className="space-y-4">
-                <Skeleton className="h-8 w-1/3 mx-auto" />
+                <Skeleton className="h-8 w-1/3 mx-auto bg-white/20" />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Skeleton className="h-64 rounded-lg" />
-                    <Skeleton className="h-64 rounded-lg" />
-                    <Skeleton className="h-64 rounded-lg" />
+                    <Skeleton className="h-64 rounded-lg bg-white/20" />
+                    <Skeleton className="h-64 rounded-lg bg-white/20" />
+                    <Skeleton className="h-64 rounded-lg bg-white/20" />
                 </div>
             </div>
              <div className="space-y-4">
-                 <Skeleton className="h-8 w-1/3 mx-auto" />
-                 <Skeleton className="h-24 rounded-lg" />
+                 <Skeleton className="h-8 w-1/3 mx-auto bg-white/20" />
+                 <Skeleton className="h-24 rounded-lg bg-white/20" />
             </div>
         </div>
       )}

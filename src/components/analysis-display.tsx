@@ -9,7 +9,7 @@ interface AnalysisDisplayProps {
 }
 
 const SectionCard = ({ title, icon, content }: { title: string; icon: React.ReactNode; content: string }) => (
-    <Card className="h-full bg-card shadow-md">
+    <Card className="h-full glassmorphism">
         <CardHeader>
             <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
@@ -34,7 +34,7 @@ export default function AnalysisDisplay({ analysis }: AnalysisDisplayProps) {
         <SectionCard title="Consequences" icon={<AlertTriangle className="h-6 w-6 text-primary" />} content={analysis.consequences} />
       </div>
 
-       <Card className="shadow-md">
+       <Card className="glassmorphism">
             <CardHeader>
                 <div className="flex items-center gap-4">
                      <div className="bg-primary/10 p-3 rounded-lg">

@@ -44,7 +44,7 @@ export default function LocationButtons() {
     
     if (isLoading) {
         return (
-             <Card className="shadow-md">
+             <Card className="glassmorphism">
                 <CardContent className="p-6 flex items-center justify-center h-24">
                     <Loader2 className="h-6 w-6 animate-spin text-primary" />
                     <p className="ml-3 text-muted-foreground">Getting your location...</p>
@@ -55,7 +55,7 @@ export default function LocationButtons() {
 
     if (error) {
         return (
-            <Alert variant="destructive">
+            <Alert variant="destructive" className="glassmorphism bg-destructive/80">
                 <AlertCircle className="h-4 w-4" />
                 <AlertTitle>Location Error</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
@@ -64,13 +64,13 @@ export default function LocationButtons() {
     }
 
     return (
-        <Card className="shadow-md">
+        <Card className="glassmorphism">
             <CardContent className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <Button onClick={() => openMaps('hospitals')} size="lg" variant="outline">
+                 <Button onClick={() => openMaps('hospitals')} size="lg" variant="outline" className="bg-transparent hover:bg-primary/10">
                     <Hospital className="mr-2 h-5 w-5" />
                     Find Nearby Hospitals
                 </Button>
-                <Button onClick={() => openMaps('doctors')} size="lg" variant="outline">
+                <Button onClick={() => openMaps('doctors')} size="lg" variant="outline" className="bg-transparent hover:bg-primary/10">
                     <Stethoscope className="mr-2 h-5 w-5" />
                     Find Nearby Doctors
                 </Button>
