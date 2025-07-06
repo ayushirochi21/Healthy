@@ -49,7 +49,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
   }
 
   return (
-    <Card className="flex flex-col h-full overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
+    <Card className="flex flex-col h-full overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl duration-300">
       <CardHeader>
         <CardTitle className="text-xl line-clamp-2">{article.title}</CardTitle>
       </CardHeader>

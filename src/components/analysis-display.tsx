@@ -9,10 +9,14 @@ interface AnalysisDisplayProps {
 }
 
 const SectionCard = ({ title, icon, content }: { title: string; icon: React.ReactNode; content: string }) => (
-    <Card className="h-full">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">{title}</CardTitle>
-            {icon}
+    <Card className="h-full bg-card shadow-md">
+        <CardHeader>
+            <div className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                    {icon}
+                </div>
+                <CardTitle className="text-lg font-semibold text-foreground">{title}</CardTitle>
+            </div>
         </CardHeader>
         <CardContent>
             <p className="text-sm text-muted-foreground">{content}</p>
@@ -22,23 +26,27 @@ const SectionCard = ({ title, icon, content }: { title: string; icon: React.Reac
 
 export default function AnalysisDisplay({ analysis }: AnalysisDisplayProps) {
   return (
-    <div className="space-y-6">
-       <h2 className="text-3xl font-bold text-primary-foreground text-center">Symptom Analysis</h2>
+    <div className="space-y-8">
+       <h2 className="text-3xl font-bold text-foreground text-center">Symptom Analysis</h2>
       <div className="grid gap-6 md:grid-cols-3">
-        <SectionCard title="Prevention" icon={<ShieldCheck className="h-5 w-5 text-muted-foreground" />} content={analysis.prevention} />
-        <SectionCard title="Treatments" icon={<HeartPulse className="h-5 w-5 text-muted-foreground" />} content={analysis.treatments} />
-        <SectionCard title="Consequences" icon={<AlertTriangle className="h-5 w-5 text-muted-foreground" />} content={analysis.consequences} />
+        <SectionCard title="Prevention" icon={<ShieldCheck className="h-6 w-6 text-primary" />} content={analysis.prevention} />
+        <SectionCard title="Treatments" icon={<HeartPulse className="h-6 w-6 text-primary" />} content={analysis.treatments} />
+        <SectionCard title="Consequences" icon={<AlertTriangle className="h-6 w-6 text-primary" />} content={analysis.consequences} />
       </div>
 
-       <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-base font-medium">Relevant Article Summaries</CardTitle>
-                <ListChecks className="h-5 w-5 text-muted-foreground" />
+       <Card className="shadow-md">
+            <CardHeader>
+                <div className="flex items-center gap-4">
+                     <div className="bg-primary/10 p-3 rounded-lg">
+                        <ListChecks className="h-6 w-6 text-primary" />
+                     </div>
+                    <CardTitle className="text-lg font-semibold text-foreground">Relevant Article Summaries</CardTitle>
+                </div>
             </CardHeader>
             <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+                <ul className="space-y-3 text-sm text-muted-foreground list-disc pl-10">
                     {analysis.articlesSummary.map((summary, index) => (
-                        <li key={index}>{summary}</li>
+                        <li key={index} className="pl-2">{summary}</li>
                     ))}
                 </ul>
             </CardContent>

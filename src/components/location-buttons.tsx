@@ -44,8 +44,8 @@ export default function LocationButtons() {
     
     if (isLoading) {
         return (
-             <Card>
-                <CardContent className="p-6 flex items-center justify-center h-20">
+             <Card className="shadow-md">
+                <CardContent className="p-6 flex items-center justify-center h-24">
                     <Loader2 className="h-6 w-6 animate-spin text-primary" />
                     <p className="ml-3 text-muted-foreground">Getting your location...</p>
                 </CardContent>
@@ -64,13 +64,13 @@ export default function LocationButtons() {
     }
 
     return (
-        <Card>
+        <Card className="shadow-md">
             <CardContent className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <Button onClick={() => openMaps('hospitals')} size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground button-glossy-glow">
+                 <Button onClick={() => openMaps('hospitals')} size="lg" variant="outline">
                     <Hospital className="mr-2 h-5 w-5" />
                     Find Nearby Hospitals
                 </Button>
-                <Button onClick={() => openMaps('doctors')} size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground button-glossy-glow">
+                <Button onClick={() => openMaps('doctors')} size="lg" variant="outline">
                     <Stethoscope className="mr-2 h-5 w-5" />
                     Find Nearby Doctors
                 </Button>
