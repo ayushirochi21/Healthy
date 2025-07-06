@@ -13,7 +13,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-grow flex flex-col items-center p-4 sm:p-8 md:p-12 lg:p-24">
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-3xl">
           <div className="flex flex-col items-center text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground tracking-tight text-glow">
               Your Personal Health Companion
