@@ -88,8 +88,9 @@ export default function SymptomAnalyzer() {
 
       {isLoading && (
         <div className="space-y-12">
-            <div className="space-y-4">
+            <div className="space-y-6">
                 <Skeleton className="h-8 w-1/3 mx-auto bg-white/20" />
+                <Skeleton className="h-48 rounded-lg bg-white/20" />
                  <div className="grid gap-6 md:grid-cols-3">
                     <Skeleton className="h-40 rounded-lg bg-white/20" />
                     <Skeleton className="h-40 rounded-lg bg-white/20" />

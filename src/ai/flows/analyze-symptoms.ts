@@ -18,6 +18,10 @@ export type AnalyzeSymptomsInput = z.infer<typeof AnalyzeSymptomsInputSchema>;
 
 const AnalyzeSymptomsOutputSchema = z.object({
   analysis: z.object({
+    potentialConditions: z.array(z.object({
+        name: z.string().describe("The name of the potential disease or condition."),
+        description: z.string().describe("A brief description of the condition and why it might be relevant based on the symptoms provided.")
+    })).describe("A list of potential diseases or conditions based on the symptoms."),
     prevention: z.string().describe('Possible preventions for the described symptoms.'),
     treatments: z.string().describe('Potential treatments for the described symptoms.'),
     consequences: z.string().describe('Possible consequences of the described symptoms.'),
@@ -34,8 +38,14 @@ const analyzeSymptomsPrompt = ai.definePrompt({
   name: 'analyzeSymptomsPrompt',
   input: {schema: AnalyzeSymptomsInputSchema},
   output: {schema: AnalyzeSymptomsOutputSchema},
-  prompt: `You are a medical assistant. Analyze the symptoms described by the user and provide possible preventions, treatments, and consequences.
-Also, summarize relevant articles into brief and readable bullet points.
+  prompt: `You are a medical assistant. Analyze the symptoms described by the user and provide the following information:
+1. A list of potential diseases or conditions that could match the symptoms. For each condition, provide its name and a short description.
+2. General advice on possible preventions for the symptoms.
+3. General advice on potential treatments for the symptoms.
+4. General advice on possible consequences if the symptoms are left untreated.
+5. A summary of relevant medical articles in brief, readable bullet points.
+
+ALWAYS include a disclaimer that this is not a substitute for professional medical advice and the user should consult a healthcare professional for an accurate diagnosis. You can add this disclaimer within the generated text.
 
 Symptoms: {{{symptoms}}}`,
 });
